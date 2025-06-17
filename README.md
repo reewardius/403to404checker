@@ -3,6 +3,7 @@ A Python script to identify URLs that return a 403 status code on the root path 
 
 **Prerequisites:**
 
+- https://github.com/reewardius/bbFuzzing.txt
 - Python 3.6+
 - Required Python packages: `requests`, `urllib3`:
 ```
