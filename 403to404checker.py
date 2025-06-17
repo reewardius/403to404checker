@@ -42,7 +42,8 @@ def main():
     if args.file:
         try:
             with open(args.file, 'r') as f:
-                targets = [line.strip() for line in f if line.strip()]
+                # Читаем строки и удаляем дубликаты с помощью множества
+                targets = list(set(line.strip() for line in f if line.strip()))
             for target in targets:
                 check_target(target, args.output)
         except FileNotFoundError:
