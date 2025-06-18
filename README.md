@@ -1,5 +1,5 @@
 # 403to404checker
-A Python script to identify URLs that return a 403 status code on the root path and a 404 status code on the /test path. The script processes a list of target URLs or a single domain, optionally saving matching URLs to an output file.
+A Python script to identify URLs that return a 403,401,400 status code on the root path and a 404 status code on the /test path. The script processes a list of target URLs or a single domain, optionally saving matching URLs to an output file.
 
 **Prerequisites:**
 
