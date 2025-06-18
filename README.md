@@ -15,7 +15,7 @@ The script can be used as part of a larger reconnaissance pipeline:
 1. Filter URLs with HTTP 403/401/400 using `httpx`:
 
 ```bash
-httpx -l alive_http_services.txt -mc 403,401,400 -o 40X.txt
+httpx -l subs.txt -mc 403,401,400 -o 40X.txt
 ```
 2. Run 403to404checker:
 ```bash
