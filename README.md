@@ -12,14 +12,14 @@ pip install requests urllib3
 ### Example Workflow
 The script can be used as part of a larger reconnaissance pipeline:
 
-1. Filter URLs with HTTP 403 using `httpx`:
+1. Filter URLs with HTTP 403/401 using `httpx`:
 
 ```bash
-httpx -l alive_http_services.txt -mc 403 -o 403.txt
+httpx -l alive_http_services.txt -mc 403,401 -o 40X.txt
 ```
 2. Run 403to404checker:
 ```bash
-python3 403to404checker.py -f 403.txt -o 404_results.txt
+python3 403to404checker.py -f 40X.txt -o 404_results.txt
 ```
 3. Fuzz the results using `ffuf`:
 ```bash
