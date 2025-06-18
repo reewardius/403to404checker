@@ -11,7 +11,7 @@ def check_target(target, output_file=None):
     try:
         # Проверяем основной URL, игнорируя HTTPS ошибки
         response = requests.get(target, timeout=5, verify=False)
-        if response.status_code in (403, 401):
+        if response.status_code in (403, 401, 400):
             # Проверяем URL с /test, игнорируя HTTPS ошибки
             test_url = f"{target.rstrip('/')}/test"
             test_response = requests.get(test_url, timeout=5, verify=False)
