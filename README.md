@@ -21,7 +21,11 @@ httpx -l subs.txt -mc 403,401,400 -o 40X.txt
 ```bash
 python3 403to404checker.py -f 40X.txt -o 404_results.txt
 ```
-3. Fuzz the results using `ffuf`:
+3. You can also filter URLs using `nuclei`:
+```
+nuclei -l subs.txt -t 40X-to-404-misconfig.yaml -o 404_results.txt
+```
+5. Fuzz the results using `ffuf`:
 ```bash
 ffuf -u URL/TOP -w 404_results.txt:URL -w top.txt:TOP -ac -mc 200 -o fuzz_results.json -fs 0 && \
 python3 delete_falsepositives.py -j fuzz_results.json -o fuzz_output.txt -fp fp_domains.txt
